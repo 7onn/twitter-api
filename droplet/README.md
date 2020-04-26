@@ -9,7 +9,7 @@ $ git clone https://github.com/devbytom/twitter-api.git app && cd app
 $ cd droplet && chmod +x ./setup.sh
 $ ./setup.sh
 ```
-
+while setup.sh run, a confirm will be prompted u_u
 
 nvm about this, or not
 ```
