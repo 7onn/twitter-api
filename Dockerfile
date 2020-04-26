@@ -8,5 +8,5 @@ RUN addgroup -S app && \
   adduser -S app -G app
 USER app
 WORKDIR /app
-COPY --chown=app:app --from=builder /app/target/twitter-0.0.1.jar .
-CMD java -jar twitter-0.0.1.jar
+COPY --chown=app:app --from=builder /app/target/twitter-0.0.1-standalone.jar .
+CMD java -jar twitter-0.0.1-standalone.jar
