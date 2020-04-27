@@ -27,7 +27,7 @@ echo "
           ssl_verify_client off;
           location / {
               proxy_pass http://twitter_api;
-              proxy_set_header Host http://echotom.dev;
+              proxy_set_header Host \$host;
               proxy_set_header X_FORWARDED_PROTO https;
               proxy_set_header X-Forwarded-For \$remote_addr;
               proxy_set_header X-Forwarded-Port \$server_port;
