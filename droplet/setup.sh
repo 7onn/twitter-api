@@ -16,7 +16,7 @@ echo "
       keepalive_timeout  65;
 
       upstream echotom.dev {
-          server localhost:3000;
+          server 127.0.0.1:3000;
       }
 
       server {
@@ -26,9 +26,11 @@ echo "
           ssl_certificate_key /etc/letsencrypt/live/echotom.dev/privkey.pem;
           ssl_verify_client off;
           location / {
-              proxy_pass  https://echotom.dev;
-              proxy_set_header Host $http_host;
+              proxy_pass http://echotom.dev;
+              proxy_set_header Host http://echotom.dev;
               proxy_set_header X_FORWARDED_PROTO https;
+              proxy_set_header X-Forwarded-For \$remote_addr;
+              proxy_set_header X-Forwarded-Port \$server_port;
           }
       }
   }
