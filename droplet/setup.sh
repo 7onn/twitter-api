@@ -15,7 +15,7 @@ echo "
       sendfile        on;
       keepalive_timeout  65;
 
-      upstream echotom.dev {
+      upstream twitter_api {
           server 127.0.0.1:3000;
       }
 
@@ -26,7 +26,7 @@ echo "
           ssl_certificate_key /etc/letsencrypt/live/echotom.dev/privkey.pem;
           ssl_verify_client off;
           location / {
-              proxy_pass http://echotom.dev;
+              proxy_pass http://twitter_api;
               proxy_set_header Host http://echotom.dev;
               proxy_set_header X_FORWARDED_PROTO https;
               proxy_set_header X-Forwarded-For \$remote_addr;
