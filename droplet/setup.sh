@@ -32,7 +32,7 @@ echo "
           }
       }
   }
-" >> /etc/nginx/nginx.confg
+" >> /etc/nginx/nginx.conf
 
 sudo systemctl start nginx
 stemctl status nginx
